@@ -1,0 +1,19 @@
+ques: n&(n-1)&(n-2)&(n-3)......(n-k)=0
+we need to find k value when this becomes 0
+
+ans: to find that first we have to calculate nearest pre two power value and print -1 of that two power value.This will be our answer.
+To find nearest two power we have to do right shift a number until it becomes 0 and count the iterations,and after counting we have to do 
+**1<<count-1 to get pre two power value**
+**1<<count to get post two power value**
+#why we find two power
+ans: when we making & with next number only two power values will getting 0's  
+
+n=int(input())
+count=0
+while(n):
+    n=n>>1
+    count+=1
+posttwopower=1<<count
+pretwopower=1<<count-1
+print(posttwopower,pretwopower) #to find two powers(pre and post)
+print(pretwopower-1) #ans
